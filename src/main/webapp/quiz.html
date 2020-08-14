@@ -1,0 +1,460 @@
+<html>
+
+<head>
+<title>Quiz</title>
+</head>
+
+<body bgcolor="#f5f5f5">
+
+<h1>Test Your Knowledge..</h1>
+
+<script language="JavaScript">
+
+
+/*Declare the array. The size of your array is one more than the number of questions you are asking. Arrays begin at position 0. We will be putting the students name in position 0.*/
+
+numberQuestions = 20
+
+var AA=new Array(numberQuestions + 1);
+
+/*A nested for loop.
+
+The outer loop cycles through each question asked.
+
+The inner loop checks the value of each answer. Since we have three responses to each quiz, the middle parameter is 3. Change this number to correspond to the number of responses per question in your quiz.*/
+
+function first( ) {
+
+for (var w=1; w <= numberQuestions; w++) {
+
+for(var n=0; n <=3; n++){
+
+/*This if statement checks to see if that particular response was selected. If it was, then the value of the response is put in the array AA. Notice also that I am accessing the forms through the forms array. Using the forms array enables me to check through all the questions using a loop, instead of accessing each form individually.*/
+
+if (document.forms[w].elements[n].checked){
+
+AA[w] = document.forms[w].elements[n].value;
+
+}
+
+}
+
+}
+
+/*This places the name of the person taking the quiz into the 0th position of the array. Remember that arrays begin at position 0. This will be the persons name.*/
+
+AA[0] = document.id.input1.value
+
+var z=0;
+
+/*This little for loop cycles through the responses that are stored in the array AA. If the answer is correct, and you need to type the word correct, no spaces, capitalization or any other variation, then we add 1 to the value of z. This will enable us to determine what percentage of questions the student got correct.*/
+
+for (var n=1; n<= numberQuestions; n++) {
+
+if (AA[n] == "correct") {z+=1};
+
+}
+
+/*Opens a new window to display the choices selected by the user and the percentage correct. If you asked more than 4 questions, you will need to copy/paste the line highlighted in blue and change the number to the corresponding question number.  For example, if there is a fifth question, add a line "Number 5 is : "+AA[5] +"<br>"+  to the code below.*/
+
+results=window.open("","","height=400,width=250,scrollbars=yes")
+
+results.document.open();
+
+results.document.write ("<html>" +
+
+"<head><title>Answers</title>"+
+
+"<body bgcolor=blue text=white>"+
+
+"<hr>"+"<BR>" +
+
+"Number 1 is : "+AA[1] +"<br>"+
+
+"Number 2 is: "+AA[2] +"<br>"+
+
+"Number 3 is: "+AA[3] + "<br>"+
+
+"Number 4 is : "+AA[4] +"<br>"+
+"Number 5 is : "+AA[5] +"<br>"+
+"Number 6 is : "+AA[6] +"<br>"+
+"Number 7 is : "+AA[7] +"<br>"+
+"Number 8 is : "+AA[8] +"<br>"+
+"Number 9 is : "+AA[9] +"<br>"+
+"Number 10 is : "+AA[10] +"<br>"+
+"Number 11 is : "+AA[11] +"<br>"+
+
+"Number 12 is: "+AA[12] +"<br>"+
+
+"Number 13 is: "+AA[13] + "<br>"+
+
+"Number 14 is : "+AA[14] +"<br>"+
+"Number 15 is : "+AA[15] +"<br>"+
+"Number 16 is : "+AA[16] +"<br>"+
+"Number 17 is : "+AA[17] +"<br>"+
+"Number 18 is : "+AA[18] +"<br>"+
+"Number 19 is : "+AA[19] +"<br>"+
+"Number 20 is : "+AA[20] +"<br>"+
+
+"<br><br>"+
+
+AA[0] + ", you got "+z+" correct out of "+ numberQuestions +"<br><br>" + "Your score is "+ Math.round((z/ numberQuestions) * 100)+" %"
+
++"<br><br></body></html>");
+
+results.document.close();
+
+}
+
+
+</script>
+
+ 
+
+<p><b>Given each of the questions below, check the most appropriate response.</b></p>
+
+<form NAME="id">
+<p>Please enter your name <input size="35" type="text" name="input1" rows="1" cols="50"></p>
+</form>
+
+<form>
+<p>1. Why so JavaScript and Java have similar name ?<br><br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">JavaScript is a stripped-down version of Java<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">They both originated on the island of Java<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">None<br>
+
+<input type="radio" name="Q1" value="correct">JavaScript’s syntax is loosely based on Java’s<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+<p>2. ______ JavaScript is also called client-side JavaScript?<br><br>
+
+<input type="radio" name="Q2" value="correct">Navigator<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">LiveWire<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Native<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Microsoft<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>3.__________ JavaScript is also called server-side JavaScript.<br><br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">Microsoft<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">Navigator<br>
+
+<input type="radio" name="Q3" value="correct">LiveWire<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">Native<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>4. Which of the following attribute can hold the JavaScript version?<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B."> SCRIPT<br>
+
+<input type="radio" name="Q4" value="correct">LANGUAGE<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">VERSION<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">None of the above<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>5. Inside which HTML element do we put the JavaScript?<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B."> js <br>
+
+<input type="radio" name="Q4" value="correct">script<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">javascript<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Scripting<br>
+
+<br>
+<br>
+</p>
+</form>
+<form>
+<p>6. Choose the server-side JavaScript object? ?<br><br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">FileUpLoad<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">Function<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">Date<br>
+
+<input type="radio" name="Q1" value="correct"> File<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+<p>7. Choose the client-side JavaScript object<br><br>
+
+<input type="radio" name="Q2" value="correct">FileUpLoad<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Client<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Cursor<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Database<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>8. Which of the following is not considered a JavaScript operator?<br><br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">new<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">typeOf<br>
+
+<input type="radio" name="Q3" value="correct">this<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">delete<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>9. JavaScript is interpreted by _________<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B."> server<br>
+
+<input type="radio" name="Q4" value="correct">Client<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Object<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">None of the above<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>10.Using _______ statement is how you test for a specific condition.
+<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Select <br>
+
+<input type="radio" name="Q4" value="correct">if<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Switch<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">For<br>
+
+<br>
+<br>
+</p>
+</form>
+<form>
+<p>11. Why so JavaScript and Java have similar name ?<br><br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">JavaScript is a stripped-down version of Java<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">They both originated on the island of Java<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">None<br>
+
+<input type="radio" name="Q1" value="correct">JavaScript’s syntax is loosely based on Java’s<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+<p>12. ______ JavaScript is also called client-side JavaScript?<br><br>
+
+<input type="radio" name="Q2" value="correct">Navigator<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">LiveWire<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Native<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Microsoft<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>13.__________ JavaScript is also called server-side JavaScript.<br><br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">Microsoft<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">Navigator<br>
+
+<input type="radio" name="Q3" value="correct">LiveWire<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">Native<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>14. Which of the following attribute can hold the JavaScript version?<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B."> SCRIPT<br>
+
+<input type="radio" name="Q4" value="correct">LANGUAGE<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">VERSION<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">None of the above<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>15. Inside which HTML element do we put the JavaScript?<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B."> js <br>
+
+<input type="radio" name="Q4" value="correct">script<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">javascript<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Scripting<br>
+
+<br>
+<br>
+</p>
+</form>
+<form>
+<p>16. Choose the server-side JavaScript object? ?<br><br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">FileUpLoad<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">Function<br>
+
+<input type="radio" name="Q1" value="Sorry, the correct answer is D.">Date<br>
+
+<input type="radio" name="Q1" value="correct"> File<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+<p>17. Choose the client-side JavaScript object<br><br>
+
+<input type="radio" name="Q2" value="correct">FileUpLoad<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Client<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Cursor<br>
+
+<input type="radio" name="Q2" value="Sorry, the correct answer is A.">Database<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>18. Which of the following is not considered a JavaScript operator?<br><br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">new<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">typeOf<br>
+
+<input type="radio" name="Q3" value="correct">this<br>
+
+<input type="radio" name="Q3" value="Sorry, the correct answer is C.">delete<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>19. JavaScript is interpreted by _________<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B."> server<br>
+
+<input type="radio" name="Q4" value="correct">Client<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Object<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">None of the above<br>
+
+<br>
+<br>
+</p>
+</form>
+
+<form>
+
+<p>20.Using _______ statement is how you test for a specific condition.
+<br><br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Select <br>
+
+<input type="radio" name="Q4" value="correct">if<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">Switch<br>
+
+<input type="radio" name="Q4" value="Sorry, the correct answer is B.">For<br>
+
+<br>
+<br>
+</p>
+</form>
+
+
+
+
+<form>
+
+<p><input type="button" name="answers" value="Click here for answers" onclick="first()">
+
+</form>
+</body>
+</html>
